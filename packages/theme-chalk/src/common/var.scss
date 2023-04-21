@@ -1,0 +1,116 @@
+
+// $base_color: #2cbfbe;
+// teal: #008080;
+$base_color: #008080;
+$--color-primary: $base_color !default;
+$--color-white:#ffffff !default;
+$--color-black: #000000 !default;
+// Mix 函数是将两种颜色根据一定的比例混合在一起，生成另一种颜色。其使用语法如下：mix($color-1,$color-2,$weight); 
+// $color-1 和 $color-2 指的是你需要合并的颜色，颜色可以是任何表达式，也可以是颜色变量。
+// $weight 为 合并的比例（选择权重），默认值为 50%，其取值范围是 0~1 之间。它是每个 RGB 的百分比来衡量，当然透明度也会有一定的权重。默认的比例是 50%，这意味着两个颜色各占一半，如果指定的比例是 25%，这意味着第一个颜色所占比例为 25%，第二个颜色所占比例为75%。
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* #b3d9d9 */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* #e6f2f2 */
+
+$--color-success: #67c23a !default;
+$--color-success-light-2:mix($--color-white, $--color-success, 20%) !default;
+/* 85ce61 */
+$--color-success-light-5:mix($--color-white, $--color-success, 50%) !default;
+
+
+$--color-warning: #e6a23c !default;
+$--color-warning-light-2:mix($--color-white, $--color-warning, 20%) !default;
+/* ebb563 */
+$--color-warning-light-5:mix($--color-white, $--color-warning, 50%) !default;
+
+
+$--color-danger: #f56c6c !default;
+$--color-danger-light-2:mix($--color-white, $--color-danger, 20%) !default;
+/* f78989 */
+$--color-danger-light-5:mix($--color-white, $--color-danger, 50%) !default;
+
+
+$--color-info: #909399 !default;
+$--color-info-light-2:mix($--color-white, $--color-info, 20%) !default;
+/*  */
+$--color-info-light-5:mix($--color-white, $--color-info, 50%) !default;
+
+// font color
+$--color-text-primary: #303133 !default;
+$--color-text-regular: #606266 !default;
+$--color-text-secondary: #909399 !default;
+$--color-text-placeholder: #C0C4CC !default;
+
+// border color
+$--border-color-base: #DCDFE6 !default;
+$--border-color-lighter: #EBEEF5 !default;
+
+// 排版相关变量
+$--font-weight-primary: 500 !default;
+$--font-size-base: 14px !default;
+$--border-radius-base: 4px !default;
+
+/* Border
+-------------------------- */
+$--border-width-base: 1px !default;
+$--border-style-base: solid !default;
+$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+
+/* Button----------------------------------------- start */
+// default button size
+$--button-font-weight: $--font-weight-primary !default;
+$--button-padding-vertical: 12px !default;
+$--button-padding-horizontal: 20px !default;
+$--button-font-size: $--font-size-base !default;
+$--button-border-radius: $--border-radius-base !default;
+// medium button size
+$--button-medium-padding-vertical: 10px !default;
+$--button-medium-padding-horizontal: 20px !default;
+$--button-medium-font-size: $--font-size-base !default;
+$--button-medium-border-radius: $--border-radius-base !default;
+// small button size
+$--button-small-padding-vertical: 9px !default;
+$--button-small-padding-horizontal: 15px !default;
+$--button-small-font-size: 12px !default;
+$--button-small-border-radius: #{$--border-radius-base - 1} !default;
+// mini button size
+$--button-mini-padding-vertical: 7px !default;
+/// padding||Spacing|3
+$--button-mini-padding-horizontal: 15px !default;
+$--button-mini-font-size: 12px !default;
+$--button-mini-border-radius: #{$--border-radius-base - 1} !default;
+
+
+// default color
+$--button-default-background-color:  $--color-white !default;
+$--button-default-border-color: $--border-color-base !default;
+$--button-default-font-color: $--color-text-regular !default;
+// primary color
+$--button-primary-font-color: $--color-white !default;
+$--button-primary-background-color: $--color-primary !default;
+$--button-primary-border-color: $--color-primary !default;
+// success color
+$--button-success-border-color: $--color-success !default;
+$--button-success-font-color: $--color-white !default;
+$--button-success-background-color: $--color-success !default;
+// warning color
+$--button-warning-border-color: $--color-warning !default;
+$--button-warning-font-color: $--color-white !default;
+$--button-warning-background-color: $--color-warning !default;
+// danger color
+$--button-danger-border-color: $--color-danger !default;
+$--button-danger-font-color: $--color-white !default;
+$--button-danger-background-color: $--color-danger !default;
+// info color
+$--button-info-border-color: $--color-info !default;
+$--button-info-font-color: $--color-white !default;
+$--button-info-background-color: $--color-info !default;
+// disabled color
+$--button-disabled-font-color: $--color-text-placeholder !default;
+$--button-disabled-background-color: $--color-white !default;
+$--button-disabled-border-color: $--border-color-lighter !default;
+/* Button----------------------------------------- end */
+
+
+
+$--button-hover-tint-percent: 20% !default;
+$--button-active-shade-percent: 10% !default;
