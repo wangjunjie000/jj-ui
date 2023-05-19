@@ -28,7 +28,15 @@
       </template>
     </demo-block>
 
-    <h3>图标集合</h3>
+    <h3>常用图标集合</h3>
+    <ul class="icon_list">
+      <li class="icon_list_item" v-for="iconClass in iconListCommon" :key="iconClass">
+        <i class="icon" :class="iconClass"></i>
+        <span class="icon_name">{{ iconClass }}</span>
+      </li>
+    </ul>
+
+    <h3>完整图标集合</h3>
     <ul class="icon_list">
       <li class="icon_list_item" v-for="iconClass in iconList" :key="iconClass">
         <i class="icon" :class="iconClass"></i>
@@ -40,6 +48,7 @@
 
 <script>
 import iconList from './iconList'
+import iconListCommon from './iconListCommon'
 export default {
   name: 'jjIconPage',
   data() {
@@ -52,6 +61,7 @@ export default {
         <i class=" jj-alipay" ></i>
       `,
       iconList,
+      iconListCommon,
     }
   },
   methods: {},

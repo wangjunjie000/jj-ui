@@ -1,5 +1,7 @@
 # jj-vue-ui
 
+仿 element 开源组件库。
+
 ## Project setup
 ```
 npm install
@@ -10,7 +12,19 @@ npm install
 npm run serve
 ```
 
-### Install
+### Compiles and minifies for production
+生成 组件库 文档
 ```
-npm i jj-vue-ui
+npm run build
+```
+
+### 生成 npm 库文件
+记得生成前将 package.json 中的 version 版本号加 1
+```
+npm run lib
+```
+
+### 发布到 npm 库
+```
+npm run publish
 ```

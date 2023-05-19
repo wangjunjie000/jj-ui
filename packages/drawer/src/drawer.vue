@@ -1,5 +1,10 @@
 <template>
-  <div @click.self="handleWrapperClick" class="base-drawer_wrapper" :style="{ zIndex: zIndex }" v-show="isShowBaseDrawer">
+  <div
+    @click.self="handleWrapperClick"
+    class="base-drawer_wrapper"
+    :style="{ zIndex: $JJUI.zIndex }"
+    v-show="isShowBaseDrawer"
+  >
     <div :class="`base-drawer base-drawer-${_uid}`" :style="drawerStyle">
       <header class="drawer_header" v-if="showTitle">
         <slot name="title">
@@ -111,7 +116,6 @@ export default {
       isShowBaseDrawer: false,
 
       drawerEle: null,
-      zIndex: 10,
     }
   },
 
@@ -140,6 +144,7 @@ export default {
 
     if (this.drawerEle) {
       this.drawerEle.addEventListener('transitionend', this.handleTransitionend)
+
       // 写这个是为了在mounted时默认展开
       if (this.visible) {
         if (this.appendToBody) {
@@ -186,7 +191,7 @@ export default {
         window.requestAnimationFrame(() => {
           this.$emit('open')
           // 打开遮罩层
-          this.$modal({ show: true, zIndex: this.zIndex - 1 })
+          this.$modal({ show: true, zIndex: this.$JJUI.zIndex - 1 })
           // 强制触发浏览器重绘，不写这句浏览器会合并绘制，不能触发动画
           this.drawerEle.offsetWidth
 
@@ -198,7 +203,7 @@ export default {
       // 关闭
       if (!this.visible && this.isShowBaseDrawer) {
         // 关闭遮罩层
-        this.$modal()
+        this.$modal({ show: false })
         this.drawerEle.classList.remove(`fade_enter_${this.direction}`)
         this.drawerEle.classList.add(`fade_leave_${this.direction}`)
 
@@ -211,6 +216,12 @@ export default {
     // 如果DOM是插入到body的，组件销毁时移除body中的元素
     if (this.appendToBody && this.$el && this.$el.parentNode) {
       this.$el.parentNode.removeChild(this.$el)
+    }
+    if (this.drawerEle) {
+      this.drawerEle.removeEventListener(
+        'transitionend',
+        this.handleTransitionend
+      )
     }
   },
 }
@@ -226,7 +237,8 @@ export default {
   overflow: hidden;
   margin: 0;
   .base-drawer {
-    box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2),
+      0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
     position: fixed;
     background-color: #fff;
 
@@ -238,9 +250,8 @@ export default {
       padding: 20px 20px 0;
       margin-bottom: 30px;
       text-align: center;
-      
+
       .title {
-        
       }
     }
     .drawer_body {

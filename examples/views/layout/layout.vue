@@ -6,21 +6,16 @@
       </div>
     </div>
     <div class="main">
-      
       <!-- 左侧菜单栏 -->
       <div class="sidebar">
         <ul>
           <li :key="item_1.title" class="nav-item" v-for="item_1 in ul_data">
-            <a>{{item_1.title}}</a>
+            <a>{{ item_1.title }}</a>
+
             <ul class="pure-menu-list" v-if="item_1.li_data.length != 0">
               <li :key="item_2.path" class="nav-item" v-for="item_2 in item_1.li_data">
-                <div class="nav-group__title" v-if="item_2.group">{{item_2.group}}</div>
-                <a
-                  :class="{'active':active == item_2.id}"
-                  :href="item_2.path"
-                  @click="handleMenuClick(item_2.id)"
-                >{{item_2.name}}</a>
-                <!-- active = item_2.id -->
+                <div class="nav-group__title" v-if="item_2.group">{{ item_2.group }}</div>
+                <a :class="{ active: active == item_2.path }" @click="handleMenuClick(item_2.path)">{{ item_2.name }}</a>
               </li>
             </ul>
           </li>
@@ -45,81 +40,62 @@ export default {
       ul_data: [
         {
           title: '开发指南',
-          li_data: [
-            { id: -1, name: '安装/快速上手', path: '#/component/installation' },
-          ]
+          li_data: [{  name: '安装/快速上手', path: '/component/installation' }],
         },
         {
           title: '组件',
           li_data: [
             {
-              id: '000',
+              // id: 'button',
               group: '通用',
               name: 'Button 按钮',
-              path: '#/component/button'
+              path: '/component/button',
             },
             {
-              id: '001',
+              // id: 'icon',
               name: 'Icon 图标',
-              path: '#/component/icon'
+              path: '/component/icon',
             },
 
             {
-              id: '100',
+              // id: 'messageBox',
+              group: '通知',
+              name: 'MessageBox 弹窗',
+              path: '/component/messageBox',
+            },
+
+            {
+              // id: 'drawer',
               group: '其他',
               name: 'Drawer 抽屉',
-              path: '#/component/drawer'
+              path: '/component/drawer',
             },
-
-            // {
-            //   id: '301',
-            //   name: 'Drawer 抽屉',
-            //   path: '#/component/drawer'
-            // },
-
-          ]
+          ],
         },
-
       ],
-      sidebarHover: false
+      sidebarHover: false,
     }
   },
   watch: {
-    $route: function(to, from) {
+    $route: function (to, from) {
       if (from.path != to.path) {
         document.documentElement.scrollTop = 0
       }
-    }
+    },
   },
+
   mounted() {
-    console.log(this.$route.fullPath);
-    // console.log(this.$router);
-    
-    switch (this.$route.fullPath) {
-      case '/component/installation/':
-        this.active = -1
-        break
-      case '/component/icon/':
-        this.active = -2
-        break
-      case '/component/button/':
-        this.active = '000'
-        break
-
-      case '/component/drawer/':
-        this.active = '100'
-        // console.log(this.active);
-        break
-
-    }
+    // console.log(this.$route)
+    this.active = this.$route.path
   },
-  methods: {
-    handleMenuClick(id) {
-      // console.log(id);
-      this.active = id
-    }
 
-  }
+  methods: {
+    handleMenuClick(path) {
+      // console.log(path)
+      this.active = path
+      this.$router.push(path)
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -231,4 +207,3 @@ export default {
   }
 }
 </style>
-

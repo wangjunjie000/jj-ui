@@ -6,26 +6,47 @@
     <div class="demo-tip">
       <p>该项目使用Vue.js开发</p>
       <p>
-        <a href="https://cn.vuejs.org/" target="_blank">https://cn.vuejs.org/</a>
+        <a href="https://cn.vuejs.org/" target="_blank"
+          >https://cn.vuejs.org/</a
+        >
       </p>
     </div>
     <div class="demo-tip">
       <p>参考链接</p>
       <p>
-        <a href="https://element.eleme.cn/#/zh-CN/component/installation" target="_blank">https://element.eleme.cn/#/zh-CN/component/installation</a>
+        <a
+          href="https://element.eleme.cn/#/zh-CN/component/installation"
+          target="_blank"
+          >https://element.eleme.cn/#/zh-CN/component/installation</a
+        >
       </p>
     </div>
 
     <div class="demo-tip">
       <p>参考链接</p>
       <p>
-        <a href="https://juejin.cn/post/6844903839267553293" target="_blank">https://juejin.cn/post/6844903839267553293</a>
+        <a href="https://juejin.cn/post/6844903839267553293" target="_blank"
+          >https://juejin.cn/post/6844903839267553293</a
+        >
       </p>
     </div>
     <div class="demo-tip">
       <p>参考链接</p>
       <p>
-        <a href="https://juejin.cn/post/6844903808787546125#comment" target="_blank">https://juejin.cn/post/6844903808787546125#comment</a>
+        <a
+          href="https://juejin.cn/post/6844903808787546125#comment"
+          target="_blank"
+          >https://juejin.cn/post/6844903808787546125#comment</a
+        >
+      </p>
+    </div>
+
+    <h3>github 地址</h3>
+    <div class="demo-tip">
+      <p>
+        <a href="https://github.com/wangjunjie000/jj-ui" target="_blank"
+          >https://github.com/wangjunjie000/jj-ui</a
+        >
       </p>
     </div>
 
@@ -43,9 +64,11 @@
     </div>
 
     <!-- 开始使用 -->
-    <h3 >开始使用</h3>
-    <p >至此，一个基于 Vue 安装了 jj-ui插件 的开发环境已经搭建完毕。各个组件的使用方法请参阅它们各自的文档。</p>
-    
+    <h3>开始使用</h3>
+    <p>
+      至此，一个基于 Vue 安装了 jj-ui插件
+      的开发环境已经搭建完毕。各个组件的使用方法请参阅它们各自的文档。
+    </p>
   </section>
 </template>
 

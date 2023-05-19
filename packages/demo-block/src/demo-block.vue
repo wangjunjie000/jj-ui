@@ -49,7 +49,7 @@ export default {
     },
     codeHeight: {
       type: Number,
-      default: 100,
+      default: 500,
     },
     arrowAnimation: {
       type: Boolean,
